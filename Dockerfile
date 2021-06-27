@@ -7,5 +7,7 @@ ENV GO111MODULE=on \
 
 WORKDIR /build
 
+RUN apk add build-base
+
 COPY go.mod .
 RUN go mod download
