@@ -1,0 +1,17 @@
+stages:
+  - build
+
+variables:
+  DOCKER_REGISTRY_USERNAME: nightlord189
+  TAG_LATEST: nightlord189/golangweb/latest
+
+docker-build:
+  image: docker:20.10
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $DOCKER_REGISTRY_USERNAME -p $DOCKER_REGISTRY_PASSWORD
+  script:
+    - docker build -t "$TAG_LATEST" .
+    - docker push "$TAG_LATEST"
