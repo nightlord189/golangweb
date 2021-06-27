@@ -3,7 +3,7 @@ stages:
 
 variables:
   DOCKER_REGISTRY_USERNAME: nightlord189
-  TAG_LATEST: nightlord189/golangweb/latest
+  TAG_LATEST: nightlord189/golangweb:latest
 
 docker-build:
   image: docker:20.10
